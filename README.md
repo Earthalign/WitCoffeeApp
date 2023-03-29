@@ -1,2 +1,2 @@
 # WitCoffeeApp
- Whole Java/Spring/SpringBoot/Thymeleaf project
+ Whole Java/Spring/SpringBoot/Thymeleaf project with a pinch of docker.
