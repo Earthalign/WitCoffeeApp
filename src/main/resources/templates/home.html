@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org"
+xmlns:sec="https://www.thymeleaf.org/thymeleaf-extras-springsecurity5">
+
+<head>
+    <meta charset="utf-8">
+    <title>BaristaApp</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}"  />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</head>
+<body> <!-- background="https://c.wallhere.com/photos/b2/e3/1920x1080_px_Simple_Background-1196336.jpg!d" > -->
+
+<div class="btn-group d-grid gap-2 d-md-flex justify-content-md-end" align="center" role="group" aria-label="Basic example">
+    <a sec:authorize="hasAnyAuthority('Admin')" th:href="@{/register}" class="btn btn-success"> Rejestracja </a>
+    <a th:href="@{/list_users}" class="btn btn-success"> Pracownicy </a>
+    <a th:href="@{/file}" class="btn btn-success"> Repozytorium </a>
+    <a th:href="@{/products}" class="btn btn-success"> Produkty </a>
+    <a th:href="@{/calendar}" class="btn btn-warning"> Kalendarz <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-date" viewBox="0 0 16 16">
+        <path d="M6.445 11.688V6.354h-.633A12.6 12.6 0 0 0 4.5 7.16v.695c.375-.257.969-.62 1.258-.777h.012v4.61h.675zm1.188-1.305c.047.64.594 1.406 1.703 1.406 1.258 0 2-1.066 2-2.871 0-1.934-.781-2.668-1.953-2.668-.926 0-1.797.672-1.797 1.809 0 1.16.824 1.77 1.676 1.77.746 0 1.23-.376 1.383-.79h.027c-.004 1.316-.461 2.164-1.305 2.164-.664 0-1.008-.45-1.05-.82h-.684zm2.953-2.317c0 .696-.559 1.18-1.184 1.18-.601 0-1.144-.383-1.144-1.2 0-.823.582-1.21 1.168-1.21.633 0 1.16.398 1.16 1.23z"/>
+        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
+    </svg></a>
+    <a sec:authorize="hasAnyAuthority('Admin')" th:href="@{/availabilities/new}" class="btn btn-success"> Dodaj dostępność </a>
+    <a th:href="@{/availabilities}" class="btn btn-success"> Dostępność </a>
+    <a th:href="@{/logout}" class="btn btn-success"> Wyloguj się </a>
+
+</div>
+
+
+
+        <div class="container-fluid p-5 bg-primary text-white text-center">
+            <h1>Barista App</h1>
+            <p> Pij dobrą kawą i podziel się nią z innymi </p>
+        </div>
+
+        <div class="container mt-5" align="center">
+            <div class="row">
+                <div class="col-sm-4">
+                    <div class="card" style="width:200px">
+                        <img class="card-img-top" src="calendar.PNG" alt="Card image">
+                        <div class="card-body">
+                            <h4 class="card-title"> Kalendarz </h4>
+                            <p class="card-text">Aby wiedzieć co zrobić </p>
+                            <a th:href="@{calendar}" class="btn btn-dark">Kalendarz</a>
+
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                <div class="card" style="width:200px">
+                    <img class="card-img-top" src="time.PNG" alt="Card image">
+                    <div class="card-body">
+                        <h4 class="card-title">Dostępność</h4>
+                        <p class="card-text">Dodaj kiedy możesz pracować </p>
+                        <a th:href="@{availabilities}" class="btn btn-primary">Dostępność</a>
+
+                    </div>
+                </div>
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="card" style="width:200px">
+                        <img class="card-img-top" src="product.PNG" alt="Card image">
+                        <div class="card-body">
+                            <h4 class="card-title">Produkty</h4>
+                            <p class="card-text">Kontroluj produkty w kawiarni</p>
+                            <a th:href="@{products}" class="btn btn-dark"> Na stanie </a>
+
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+
+
+<div class="mt-4 p-5 bg-dark text-white rounded" align="left">
+    <h1> Z użyciem kalendarza Google </h1>
+    <p> Możesz dodać listę rzeczy do zrobienia na dany dzień, tydzień, miesiąc i więcej! Poinformuj pracowników co jest do zrobienia w łatwy sposób. </p>
+</div>
+<div class="mt-4 p-5 bg-primary text-white rounded" align="center">
+    <h1>Dostępność pozwala Ci</h1>
+    <p> Poinformować wszystkich kiedy dana osoba może pracować, jaka jest jej dyspozycyjność stała. </p>
+</div>
+<div class="mt-4 p-5 bg-dark text-white rounded" align="right">
+    <h1>Kontroluj każdy produkt </h1>
+    <p> Widok wszystkiego co jest na stanie kawiarni pozwala bardzo łatwo i dobrze zarządzać własnym biznesem. </p>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  coffee-app:
+    image: 'earthalign/coffeapp:v1'
+    ports:
+      - '8080:8080'
+    networks:
+      - coffee
+
+  h2-database:
+    image: 'earthalign/h2db:v5'
+    hostname: 'h2-database'
+    networks:
+      - coffee
+
+networks:
+  coffee:

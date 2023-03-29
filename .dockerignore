@@ -1,0 +1,4 @@
+target/
+src/test/*
+!src/test/java/WWapp/WitCoffeeAppApplicationTests
+
